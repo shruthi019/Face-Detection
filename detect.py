@@ -2,7 +2,6 @@ import cv2
 
 def classify(gray, img):    
     faces = face_cascade.detectMultiScale(gray, 1.1, 4)
-    smiles = smile_cascade.detectMultiScale(gray)
     for (x, y, w, h) in faces:
         cv2.rectangle(img, (x,y), (x+w, y+h), (255, 0, 0), 2)
         roigray = gray[y:y+h, x:x+w]
